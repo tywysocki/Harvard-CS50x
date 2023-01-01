@@ -1,0 +1,38 @@
+sort1 uses: Bubble Sort
+
+How do you know? Bubble Sort has the fastest runtime when sorting sorted arrays,
+                 as it has the best omega; omega(n). Runtime tests show that the
+                 sorted sorted.txt files are sorted fastest by sort1:
+
+                 time ./sort1 sorted50000.txt >> 0.403s *sort1 uses bubble
+                 time ./sort2 sorted50000.txt >> 0.468s
+                 time ./sort3 sorted50000.txt >> 3.302s
+
+
+
+sort2 uses: Merge sort
+
+How do you know?: Merge Sort has the fastest runtime when sorting unsorted arrays,
+                  as it has a runtime of Order (n log n). Also, it should perform
+                  similarly when sorting sorted arrays since it has a theta(n log n).
+                  Runtime tests show that the unsorted random.txt files are sorted
+                  fastest by sort2 and also runs similar times in both scenarios:
+
+                  time ./sort1 random50000.txt  >> 8.007s
+                  time ./sort2 random50000.txt  >> 0.001s * sort2 uses Merge
+                  time ./sort3 random50000.txt  >> 3.621s
+
+
+
+sort3 uses: Selection Sort
+
+How do you know?: Selection Sort's runtime is roughly the same for sorted arrays
+                  and unsorted arrays as it has a theta(n). Comparing the runtime
+                  tests above and below show that sort3's runtime is similar for both
+                  scenarios:
+
+                  time ./short1 reversed50000.txt  6.578
+                  time ./short2 reversed50000.txt  0.360
+                  time ./short3 reversed50000.txt  3.501
+
+
