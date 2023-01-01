@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+
+            document.addEventListener("DOMContentLoaded", function(){
+                let correct = document.querySelector("#correct");
+                let incorrect = document.querySelectorAll(".incorrect");
+                let message = document.querySelector("#message");
+
+                correct.addEventListener("click", function(){
+                    correct.style.backgroundColor = "green";
+                    message.innerHTML = "Correct!";
+                })
+                for (let i = 0; i < incorrect.length; i++)
+                {
+                    incorrect[i].addEventListener("click", function(){
+                        incorrect[i].style.backgroundColor = "red";
+                        message.innerHTML = "Incorrect";
+                    })
+                }
+                document.querySelector("#button-free").addEventListener('click', function(){
+                    let input = document.querySelector("input");
+                    let message_free = document.querySelector("#message-free");
+
+                    if (input.value == "World Wide Web")
+                    {
+                        input.style.color = "green";
+                        message_free.innerHTML = "Correct!";
+                    }
+                    else
+                    {
+                        input.style.color = "red";
+                        message_free.innerHTML = "Incorrect";
+                    }
+                })
+            });
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <h3>Which city is the capital of Colorado?</h3>
+
+                <button class="incorrect">Boulder</button>
+                <button class="incorrect">Vail</button>
+                <button id="correct">Denver</button>
+                <button class="incorrect">Aspen</button>
+                <p id="message"></p>
+
+            </div>
+
+            <div class="section">
+                <h2 class="free-response">Part 2: Free Response</h2>
+                <hr class="free-response">
+
+                <h3>What does "www" stand for in a website browser?</h3>
+
+                <input type="text">
+                <button id="button-free">Check Answer</button>
+                <p id="message-free"></p>
+
+            </div>
+        </div>
+    </body>
+</html>
