@@ -3,7 +3,7 @@
 # Import the get_int function from cs50
 from cs50 import get_int
 
-# Initialize height to aviod error
+# Initialize height
 height = 0
 
 # Ask user for height; accepting only valid heights
