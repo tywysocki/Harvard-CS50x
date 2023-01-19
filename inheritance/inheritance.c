@@ -1,4 +1,4 @@
-// Simulate genetic inheritance of blood type
+// Simulating genetic inheritance of blood type
 
 #include <stdbool.h>
 #include <stdio.h>
@@ -8,12 +8,12 @@
 // Each person has two parents and two alleles
 typedef struct person
 {
-    struct person *parents[2]; // Each parent is a pointer to another person
-    char alleles[2];  // Every person will have an array of two alleles.
+    struct person *parents[2]; 
+    char alleles[2];
 }
 person;
 
-const int GENERATIONS = 3; // Number of generations of data (3 generations of the family)
+const int GENERATIONS = 3;
 const int INDENT_LENGTH = 4;
 
 // Function prototypes
@@ -51,11 +51,11 @@ person *create_family(int generations)
         person *parent1 = create_family(generations - 1);
 
         // TODO: Set parent pointers for current person
-        p->parents[0] = parent0; //  The operator -> allows access to members of the structure, using pointers
+        p->parents[0] = parent0; 
         p->parents[1] = parent1;
 
         // TODO: Randomly assign current person's alleles based on the alleles of their parents
-        p->alleles[0] = p->parents[0]->alleles[rand() % 2]; // rand() % 2 randomly chooses between 0 or 1
+        p->alleles[0] = p->parents[0]->alleles[rand() % 2]; 
         p->alleles[1] = p->parents[1]->alleles[rand() % 2];
 
     }
