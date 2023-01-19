@@ -1,22 +1,23 @@
--- Keep a log of any SQL queries you execute as you solve the mystery.
+-- Log of SQL queries executed during my investigation
 
 
---SUMMARY: This investigation has 8 parts, one for each SQL query made. I begin by looking at the police report;
---         I learn that the thief stole the CS50 Duck from the Humphery Street bakery at 10:15am and that three
---         witnesses were interviewed. I continue the investigation by searching for the details of the three interviews;
---         I learn several key pieces of information after reading statements from Ruth, Eugene, and Raymond. This information
+--SUMMARY: 
+--         My investigation of the robbery has 8 parts, one for each SQL query made. I begin by looking at the police report.
+--         I learn that the thief stole the CS50 Duck from the Humphery Street bakery on July 28th at 10:15am and that three
+--         witnesses were interviewed. I continue the investigation by searching for the details of the three interviews.
+--         I learn several key pieces of information after reading Ruth, Eugene, and Raymond's statements. This information
 --         shaped the rest of my investigation. Ruth's statement leads me to the bakery security logs, where I find license
 --         plate numbers of the cars leaving the crime scene within 10 minutes of the robbery. I find the names connected to
 --         the plate numbers and find our main suspect, Bruce, along with his phone number and passport number. Next, Eugene's
---         statement leads me to the Leggitt Street ATM, where I search for any transactions made on the day of the crime;
---         I learn that Bruce withdrew money from the ATM. I look at the phone logs next, following the information I learned
---         from Raymond's statement; I find that Bruce made a 45s phone call to a person named Robin and mark Robin as Bruce's
---         accomplice. The last steps of my investigation look into the flight records and passenger information; I find that
---         Bruce was on the earliest flight leaving Fiftyville the morning after the crime and fled to New York City. All of
+--         statement leads me to the Leggitt Street ATM, where I search for any transactions made on the day of the crime.
+--         I learn that Bruce withdrew money from the ATM. I look at the phone logs next, investigating the information I learned
+--         from Raymond's statement. I find that Bruce made a 45s phone call to a person named Robin and suspect Robin is Bruce's
+--         accomplice. In the final steps of my investigation, look into flight records and passenger information. I find that
+--         Bruce was on the earliest flight leaving Fiftyville, the morning after the crime. He fled to New York City. All of
 --         the information I found on Bruce lines up with the statements from the witnesses at this point, so I conclude the
 --         investigation and declare Bruce as the thief, who fled to New York City, and Robin as the accomplice, who bought Bruce's
 --         plane tickets.
---
+
 
 -- QUERY 1: Crime Scene Reports; Humphery Street, 07/28/2021 ----------------------------------------------------------------------------------------
 
@@ -57,7 +58,7 @@ AND day = 28;
 --            the flight tickets".
 
 
--- QUERY 3 - Bakery Security Logs; License Plate Numbers ---------------------------------------------------------------------------------------------
+-- QUERY 3 - Bakery Security Logs, License Plate Numbers ---------------------------------------------------------------------------------------------
 
 -- The license plate numbers of the cars exiting the parking lot within 10 minutes of the theft.
 -- Additionally, the names, phone numbers, and passport numbers that belong to each of the vehicles'
@@ -79,7 +80,7 @@ AND bsl.activity = 'exit';
 -- CAR 1: Time: 10:16am, Name: Vanessa, Plate Number: 5P2BI95, Phone Number: (725) 555-4692, Passport Number: 2963008352
 -- CAR 2: Time: 10:18am, Name: Bruce  , Plate Number: 94KL13X, Phone Numner: (367) 555-5533, Passport Number: 5773159633
 
--- Query 4: ATM Transactions; Bank Accounts -------------------------------------------------------------------------------------------------------
+-- Query 4: ATM Transactions, Bank Accounts -------------------------------------------------------------------------------------------------------
 
 -- The Leggitt Street ATM-transaction records. A transaction made by Bruce,
 -- the same person who left the bakery parking lot at 10:18am. Additionally,
@@ -106,7 +107,7 @@ ORDER BY atm.id;
 
 -- I search the phone records for any calls on the date of the crime that
 -- have a duration of 60 seconds or less. One of the phone calls is made
--- by Bruce. I determine the phone number that he called and list it below.
+-- by Bruce. I find the phone number that Bruce called and record it below.
 
  SELECT *
  FROM phone_calls AS phc
@@ -129,13 +130,13 @@ SELECT *
 FROM people
 WHERE phone_number = '(375) 555-8161';
 
--- PHONE NUMBER (303) 555-8161 - Person ID: 864400, Name: Robin, Passport Number: NULL, License Plate: 4V16VO0
+-- PHONE NUMBER (303) 555-8161 - Person ID: 864400, Name: Robin, Passport Number: None, License Plate: 4V16VO0
 
--- Query 7: Flights & Airports: The Thief's Escape -----------------------------------------------------------------------------------------------------
+-- Query 7: Flights & Airports -----------------------------------------------------------------------------------------------------
 
 -- I search for flights that left Fiftyville the day after the crime.
 -- I find the eariest flight leaving Fiftyville on 07/29/2021 and record
--- the flight desination and airport name.
+-- the flight desination and information.
 
 SELECT *
 FROM flights
