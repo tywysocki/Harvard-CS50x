@@ -14,7 +14,7 @@ and want to explore alternative ways to approach problems. It is NOT meant for t
 All problem sets referenced in this repository are owned by Harvard University.
 
 
-## What I learned 🤓
+## What I learned 📚
 
 1. A broad and robust understanding of computer science and programming.
 
