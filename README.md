@@ -4,7 +4,7 @@ This repository contains my solutions to the 2022 CS50 problem sets. Each soluti
 CS50 checker and recieved 100% credit.
 
 CS:50 Introduction to Computer Science is an entry-level course taught by David J. Malan at Harvard University.
-You can find more information on the course [here](https://cs50.harvard.edu/ap/2020/assets/pdfs/command-line_interaction.pdf).
+You can find more information on the course [here](https://pll.harvard.edu/course/cs50-introduction-computer-science?delta=0).
 
 ## Course Learning Objectives 📚 ...
 
