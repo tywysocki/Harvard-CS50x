@@ -1,8 +1,7 @@
 # CS50x - 2022 Solutions 🎓
-
-For more information on the course click [here.](https://pll.harvard.edu/course/cs50-introduction-computer-science?delta=0)
-
-> Something I'd like to mention on [Academic Honesty](https://cs50.harvard.edu/x/2020/honesty/). It's important that you do your best to figure out a         working solution on your own before looking at any of my solutions. Solving the problems yourself is the only way to eventual mastery. Don't cheat yourself!
+[CS50 Course Overview.](https://pll.harvard.edu/course/cs50-introduction-computer-science?delta=0).
+a
+> A quick word on [Academic Honesty](https://cs50.harvard.edu/x/2020/honesty/). If you haven't already completed the problem sets, I encourage you to try your best to find your own solution before looking at mine. If you're struggling, you can always ask the CS50 [Reddit](https://www.reddit.com/r/cs50/), [Stack Exchange](https://cs50.stackexchange.com/), and [Discord}(https://discord.gg/cs50] Q/A groups for help.
 
 ### Problem Set | Folder Name 🗂️
 -  Problem Set 1: pset_1 
